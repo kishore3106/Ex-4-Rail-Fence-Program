@@ -2,11 +2,11 @@
 ## NAME: KISHORE B
 ## REG.NO : 212224100032
 
-# IMPLEMENTATION OF RAIL FENCE – ROW & COLUMN TRANSFORMATION TECHNIQUE
+## IMPLEMENTATION OF RAIL FENCE – ROW & COLUMN TRANSFORMATION TECHNIQUE
 
 ## AIM:
 
-# To write a C program to implement the rail fence transposition technique.
+ To write a C program to implement the rail fence transposition technique.
 
 ## DESCRIPTION:
 
@@ -69,7 +69,7 @@ int main() {
 ````
 
 ## OUTPUT
-<img width="806" height="355" alt="Screenshot 2025-08-29 081251" src="https://github.com/user-attachments/assets/dcb8d57c-3e8d-4e51-9c0a-b3aded7a616a" />
+<img width="818" height="286" alt="image" src="https://github.com/user-attachments/assets/884afead-d82a-4455-80f0-0648deb6de36" />
 
 
 
