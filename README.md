@@ -24,52 +24,55 @@ In the rail fence cipher, the plain text is written downwards and diagonally on 
 ```
 #include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
-int main() {
-    char str[1000];
-    int rails, len;
-    int i, j;
-
-    printf("Enter a Secret Message:\n");
-    fgets(str, sizeof(str), stdin);
-    str[strcspn(str, "\n")] = '\0';
-
-    printf("Enter number of rails:\n");
-    scanf("%d", &rails);
-
-    len = strlen(str);
-    char rail[rails][len];
-    for (i = 0; i < rails; i++) {
-        for (j = 0; j < len; j++) {
-            rail[i][j] = '\n';
-        }
+int main()
+{
+int i, j, k, l;
+char a[20], c[20], d[20];
+printf("\n\t\tRAIL FENCE TECHNIQUE\n");
+printf("\nEnter the input string: ");
+fgets(a, sizeof(a), stdin);
+l = strlen(a);
+for (i = 0, j = 0; i < l; i++)
+{
+    if (i % 2 == 0)
+    {
+    c[j++] = a[i];
     }
-    int row = 0;
-    int dir_down = 0; 
-
-    for (j = 0; j < len; j++) {
-        rail[row][j] = str[j];
-        if (row == 0)
-            dir_down = 1;
-        else if (row == rails - 1)
-            dir_down = 0;
-        row += dir_down ? 1 : -1;
+}
+for (i = 0; i < l; i++)
+{
+    if (i % 2 == 1)
+    {
+    c[j++] = a[i];
     }
-    printf("Encrypted Message: ");
-    for (i = 0; i < rails; i++) {
-        for (j = 0; j < len; j++) {
-            if (rail[i][j] != '\n')
-                printf("%c", rail[i][j]);
-        }
-    }
-    printf("\n");
-
-    return 0;
+}
+c[j] = '\0'; 
+printf("\nCipher text after applying rail fence: %s\n", c); 
+if(l%2==0)
+{
+k = l / 2;
+}
+else
+{
+k = (l / 2) + 1;
+}
+for (i = 0, j = 0; i < k; i++)
+{
+d[j] = c[i]; j += 2;
+}
+for (i = k, j = 1; i < l; i++)
+{
+d[j] = c[i]; j += 2;
+}
+d[l] = '\0'; 
+printf("\nText after decryption: %s\n", d);
+return 0;
 }
 ````
 
 ## OUTPUT
-<img width="818" height="286" alt="image" src="https://github.com/user-attachments/assets/884afead-d82a-4455-80f0-0648deb6de36" />
+<img width="816" height="423" alt="image" src="https://github.com/user-attachments/assets/f7e2cf0f-6378-4447-9336-ee2bcd285d8e" />
+
 
 
 
